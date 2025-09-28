@@ -176,6 +176,40 @@ print(f"Loss with reduction='none': {loss_none}")
    - 数据增强
 -----
 
+### 神经网络函数
+1. 卷积函数
+   - 二维卷积
+   - `torch.nn.Conv2d`
+```
+        torch.nn.Conv2d(
+    in_channels,    # 输入通道数
+    out_channels,   # 输出通道数（卷积核个数）
+    kernel_size,    # 卷积核大小，可以是 int 或 (h, w)
+    stride=1,       # 步长，默认为1
+    padding=0,      # 填充，默认为0
+    dilation=1,     # 膨胀卷积参数，默认为1
+    groups=1,       # 分组卷积，通常保持1即可
+    bias=True,      # 是否有偏置项
+    padding_mode='zeros'  # 填充模式，默认用0填充
+)
+ ```
+   + in_channels：输入特征图的通道数，比如 RGB 图片就是 3。
+
+   + out_channels：卷积核（滤波器）的数量，决定输出特征图的通道数。
+
+   + kernel_size：卷积核的大小，例如 3 或 (3,3)。
+
+   + stride：卷积核的滑动步长。
+
+   + padding：是否在输入边缘填充，常见的有：
+
+        - padding=0 → 不填充
+
+        - padding=1 → 在边缘补 1 像素（常用于保持尺寸不变）
+
+   + bias：是否在卷积结果后加上一个可训练的偏置项。
+
+2. 
 ### 张量
 1. 创建
 
