@@ -52,4 +52,7 @@
    - `search_knn_vector_3d(search_pt, k)`：K近邻搜索
    - `search_radius_vector_3d(search_pt，radius)`：半径R近邻搜索
    - `search_hybrid_vector_3d(search_pt, radius, max_nn)`：混合邻域搜索，返回半径radius内不超过max_nn个近邻点
-  
+2. 原理
+   1. 确定 split域 判断在k维中哪个维度的方差最大 选择最大值作为域值a
+   2. node-data 根据a维上的数据点进行划分选取中间值作为node-data域位数据点，该节点的分割超平面就是通过（x,y）并垂直于：split=a轴的直线a=x；
+   3. 确定左子空间和右子空间，通过上述
